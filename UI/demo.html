@@ -1,0 +1,95 @@
+<html lang="en">
+    <head>
+      <link rel="icon" type="image/png" href="icon.jpg" sizes="32x32" />
+      <meta charset="utf-8">
+      <title>web1</title>
+      <script src="ajax.js"></script>
+      <link rel="stylesheet" href="startcss.css">
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="my-jquery.js"></script>
+      
+     
+    </head>
+    <body>
+
+        <div class="toolbar">
+            <p class="toolicon">Home</p>
+            <p class="sign-in">sign in</p>
+            <i class="material-icons" style="  color: rgb(243, 240, 240);position: relative; bottom: 75px;
+            left: 1230px;
+            z-index: 1;">login</i>
+           
+        </div>
+      
+        <div class="Trow"id="Tr1">
+            <p class="Trow-name"id="Tr1n">Name</p>
+            <p class="Trow-data" id="Tr1d">data</p>
+           
+        </div>
+       
+    <div class="data-border" id="m1">
+      <div class="row"id="r1">
+          <span class="row-name"id="r1n">  ESC201</span>
+          <span class="row-data" id="r1d">this is vaery good subjrgb(32, ect</span>
+        <div class="extra"id="r1e">
+        <button  onclick="list('r1')" class="more-b"><i class="material-icons" style="color: black;z-index: 1;">more vert</i></button>
+        <div class="other" id="r1o" style="z-index: -1;">
+         <button class="other-pb" onclick="rdelete('r1')"> <p class="other-p">delete</p></button>
+         <button class="other-pb" onclick="ruptade('r1')"><p class="other-p">update</p></button>
+        </div></div>
+        <button class="b1" id='r1b'type="button" onclick="expand('r1')"><i class="material-icons" style="color: rgb(10, 10, 10);cursor: default;
+          z-index: 1;">expand</i>
+          </button>
+      </div>
+      <div class="row"id="r2">
+        <span class="row-name"id="r2n">ESC201</span>
+        <span class="row-data" id="r2d">this is vaery good subject and vary good and nice subject,it is nivethis is vaery good subject and vary good and nice subject,this is vaery good subject and vary good and nice subject,this is vaery good subject and vary good and nice subject,this is vaery good subject and vary good and nice subject, </span>
+        <div class="extra"id="r2e">
+          <button  onclick="list('r2')" class="more-b"><i class="material-icons" style="color: black;z-index: 1;">more vert</i></button>
+          <div class="other" id="r1o" style="z-index: -1;">
+           <button class="other-pb" onclick="rdelete('r2')"> <p class="other-p">delete</p></button>
+           <button class="other-pb" onclick="ruptade('r2')"><p class="other-p">update</p></button>
+          </div></div>
+        <button class="b1" id='r2b'type="button" onclick=" expand('r2')"><i class="material-icons" style="color: rgb(10, 10, 10);cursor: default;
+        z-index: 1;">expand</i>
+        </button>
+    </div>
+    <div class="row"id="r3">
+      <span class="row-name"id="r3n">ESC201</span>
+      <span class="row-data" id="r3d">this is vaery good subject</athis></span>
+      <div class="extra"id="r3e">
+        <button  onclick="list('r3')" class="more-b"><i class="material-icons" style="color: black;z-index: 1;">more vert</i></button>
+        <div class="other" id="r3o" style="z-index: -1;">
+         <button class="other-pb" onclick="rdelete('r3')"> <p class="other-p">delete</p></button>
+         <button class="other-pb" onclick="ruptade('r3')"><p class="other-p">update</p></button>
+        </div></div>
+     <button class="b1"  id='r3b' type="button" onclick="expand('r3')"><i class="material-icons" style="color: rgb(10, 10, 10);cursor: default;z-index: 1;">expand</i></button>
+    </div>
+   
+    </div>
+    <div class="feature">
+    </div>
+<button  type ="button"onclick="add()" style="position: relative; bottom: 40px;width: 30px;background-color: azure; padding-left: 0px;
+left: 1023px;">
+<i class="material-icons" style=" color: rgb(10, 10, 10);
+z-index: 1;">add </i>
+</button>
+<div class="add" id="ad">
+  <form action="/" method="POST" enctype="application/x-www-form-urlencoded">
+    <input class="add-name" id="fn" name="name" value="mso">
+    <input class="add-data" id="fd" name="data" value="good">
+    <button class="add-send" type="submit" >
+      <i class="material-icons">send</i>
+      <button onclick="upl()"type="button"></button>
+    </button>
+    
+    
+  </form>
+
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html lang="en" id="home">
+    <head>
+      <link rel="icon" type="image/png" href="icon.jpg" sizes="32x32" />
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>web1</title>
+      <script src="ajax.js"></script>
+      <link rel="stylesheet" href="startcss.css">
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="my-jquery.js"></script>
+      
+     
+    </head>
+    <body>
+
+        <div class="toolbar">
+            <p class="toolicon">Home</p>
+            <form action="log-in" method="get">
+            <button type="submit" class="sign-in">sign in/out</button></form>
+            <i class="material-icons" style="  color: rgb(243, 240, 240);position: absolute; top: 7px;
+            right: 25px;
+            z-index: 1;">login</i>
+           </div>
+
+
+        <div class="feature">
+            <canvas id="myCanvas"  width="200" height="100" style="border:1px solid #000000;">
+                Your browser does not support the HTML canvas tag.
+                </canvas>
+                <script>
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    </script></div>
+      
+        <div class="Trow"id="Tr1">
+            <p class="Trow-name"id="Tr1n">Name</p>
+            <p class="Trow-data" id="Tr1d">data</p>
+           </div>
+       
+    <div class="data-border" id="m1">hello</div>
+    
+<button  type ="button"onclick="add()" style="position: relative; bottom: 40px;width: 30px;background-color: azure; padding-left: 0px;
+left: 1023px;">
+<i class="material-icons" style=" color: rgb(10, 10, 10);
+z-index: 1;">add </i>
+</button>
+<div class="add" id="ad">
+  
+    <input class="add-name" id="fn" name="name" value="Name">
+    <textarea class="add-data" id="fd" name="data" value="good">Enter the data...</textarea>
+    <button class="add-send" type="submit" onclick="upl()" >
+      <i class="material-icons">send</i>
+      </button>
+
+</div>
+<div class="last-feed"></div>
+    </body>
+</html>

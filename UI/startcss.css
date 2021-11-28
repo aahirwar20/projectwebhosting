@@ -1,0 +1,309 @@
+body{
+    position: relative;
+    background: #ffffff;
+ overflow-x: hidden;
+ padding-left: 0px;
+ top: 33px;
+}
+.row{
+    position: relative;
+    background-color: rgb(233, 252, 252);
+     width: 1000px;
+     height: 75px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     overflow-y: auto;
+     overflow-x:hidden;
+    
+}
+.row-name{  
+    position:absolute  ;
+ border-width: 0px    ;
+ border-radius: 10px 200px 10px 200px;
+ border-style: inset;
+ background:linear-gradient(to right, #73e09d 0%, #f1f396 100%);;
+ font-size: 20px;
+ font-weight: 200;
+ padding: 5px;
+ width: 180px;
+top: 15px;
+left: 20px;
+cursor: grab;
+padding-left: 30px;
+}
+.row-data{
+    position: absolute;
+    border-width: 0px    ;
+    border-radius: 10px;
+    border-style: inset;
+    background:linear-gradient(to right, #ffc0e5 0%, #ecdbee 100%);;
+    font-size: 20px;
+    padding: 5px;
+    width: 700px;
+    height: 20px;
+    top:15px;
+    left: 260px;
+    overflow: hidden;
+   }
+.Trow{
+    position: relative;
+    background-color: rgb(179, 181, 182);
+     width: 1025px;
+     height: 70px;
+     border: 2px;
+     border-radius: 10px;
+     border-style: ridge;
+     top: 20px;
+}
+.Trow-name{  
+    position: absolute;
+ border-width: 10px    ;
+ border-radius: 10px;
+ border-style: inset ;
+ border-top-color:  #c4c7c6;
+ border-left-color:  #cfd3d1;
+ background: linear-gradient(to bottom right , #76c1ff 0%, #fa95f1 100%);
+ font-size: 25px;
+ font-weight: 700;
+ padding:5px;
+ width: 215px;
+top: -20px;
+left: 15px;
+}
+.Trow-data{
+    position: absolute;
+    border-width: 10px    ;
+    border-radius: 10px;
+    border-style: inset;
+    border-top-color: #d3d4d3;
+ border-left-color: #cecfcf;
+    background: linear-gradient(to bottom right , #76c1ff 0%, #fa95f1 100%);;
+    font-size: 25px;
+    padding: 5px;
+    width: 725px;
+    top:-20px;
+    left: 260px;
+   }
+
+ .toolbar{
+     padding: 0px;
+     position: fixed ;
+     background-color: rgb(44, 41, 41);
+     width: 1270;
+     height: 40px;
+     border-radius: 0px;
+     z-index: 1;
+     margin: 0px;
+     top: 0px;
+     left: 0px;
+     
+ }  
+ .toolicon{
+     position: relative;
+     color: rgb(254, 254, 255);
+     font-size: 20px;
+     left: 200px;
+     bottom: 14px;
+     width: 55px;
+     height: 25px;
+     padding: 3px;
+     background-color: rgb(19, 19, 20);
+     border-radius: 5px;
+     padding-top: 1px;
+     padding-left: 10px;
+     border-width: 1px;
+     border-color: #eef0f0;
+     cursor: pointer;
+ }
+ .sign-in{
+    color: rgb(245, 245, 245);position: absolute; top: 5px;
+    right: 50px;
+    width: 70px;
+     height: 33px;
+    background-color: rgb(19, 19, 20);
+     border-radius: 5px;
+     padding-top: 1px;
+     padding-left: 10px;
+     border-width: 1px;
+     border-color: #eef0f0;
+     cursor: pointer;
+ }
+ .data-border{
+    position: relative;
+     visibility: visible;
+     height: 320px;
+     width:1022px;
+     border-radius: 10px;
+     border-style: solid;
+     border-width: 2px;
+     border-color: rgb(214, 214, 214);
+     overflow-y: auto;
+     background-color: rgb(211, 209, 209);
+    overflow-x: hidden;
+     top: 20px;
+ }
+ .feature{
+     visibility: visible;
+     position: relative;
+     height: 250px;
+     width: auto;
+ top: 0px;
+ left: 0px;
+    padding-left: 0px;
+     background:linear-gradient(to right bottom, #9154f3 0%, #fdacfd 100%);
+     border-radius: 10px;
+     
+ }
+ .last-feed{
+    visibility: visible;
+    position: relative;
+    height: 250px;
+    width: auto;
+
+   padding-left: 0px;
+    background:linear-gradient(to  bottom, #dfe0df 0%, #f5f5f5 100%);
+    border-radius: 10px;
+    top: 40px;
+    
+ }
+ .add{
+    position: relative;
+    background-color: rgb(219, 238, 240);
+     width: 1020px;
+     height: 66px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     top: 20px;
+     overflow-y: auto;
+     
+     
+ }
+ .add-name{
+     position: absolute;
+     width :225px;
+     padding-left: 10px;
+     top: 10px;
+     left: 20px;
+     height: 50px;
+     border-radius: 10px 0px 0px 10px;
+     border-width: 1px;
+     font-size: 15px;
+ }
+ .add-data{
+     
+    position: absolute;
+    width :700px;
+    padding-left: 10px;
+    top: 10px;
+    left: 250px;
+    height: 50px; 
+    font-size: 15px;
+    overflow: hidden;
+ }
+ .add-send{
+    position: absolute;
+    left: 950px;
+    height: 50px; 
+    top :10px;
+    border-radius: 0px 10px 10px 0px;
+    border-width: 1px;
+    
+ }
+ .b1{
+    
+     color: rgb(253, 254, 255);
+     border-color: rgb(251, 254, 255);
+     position: absolute; top:45px;
+        left: 955px;
+        height: 30px;
+        width: 30px;
+        padding-left: 1px;
+ }
+ .short{
+     background-color: #73e09d;
+     border-color: #73e09d;
+     position: relative;
+     top: 0px;
+     height: 30px;
+     width: 30px;
+ }
+ .row-data-ex{
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 70px;
+    top:20px;
+    left:0px;
+
+}
+.row-name-ex{
+    padding-left: 350px;
+    font-weight: 600;
+
+}
+.other-p{
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 80px;
+    height: 25px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom:0px;
+    padding-left: 0px;
+    border-radius: 5px;
+    top: -2px;
+    left: -5px;
+    border-width: 1px;
+    border-color: #1b1b1b;
+    border-style: solid;
+}
+.other{
+   
+    position: absolute;
+    visibility: visible;
+    z-index: -1;
+    left: -84px;
+    top: -10px;
+    visibility: visible;
+    width: 0px;
+}
+.extra{
+    position: absolute;
+     top:15px;
+        left: 960px; cursor: default;
+}
+.other-pb{
+    padding: 0px ; width: 80px;height: 30px;
+    border-radius: 5px;
+
+}
+.more-b{
+    position: relative;
+    left: -4px;
+    width: 40px;
+}
+.oadd{
+    position: relative;
+    background-color: rgb(228, 242, 247);
+     width: 1010px;
+     height: 75px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     top: 0px;
+     overflow-y: auto;
+     overflow-x: hidden;
+     
+}
+#myCanvas{
+    position: relative;
+    left: 100px;
+    top: 50px;
+    
+}
