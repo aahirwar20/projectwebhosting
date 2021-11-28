@@ -8,6 +8,7 @@ var pack=require('./uipack');
 var mongoose= require('mongoose');
 var url =require('url');
 mongoose.connect('mongodb://localhost:27017/my_db');
+const port = process.env.port || 3000
 var formschema =mongoose.Schema({
     name: String,
     data: String
