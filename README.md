@@ -1,21 +1,21 @@
 # projectwebhosting
 noted website
 
-##contribution 
+## contribution 
 Ankit AHIRWAR
 
 ## IT is a simple note taking website 
   
-###frontend
--HTML
--CSS
--JavaScript
--Jquary
--Ajax
+### frontend
+- HTML
+- CSS
+- JavaScript
+- Jquary
+- Ajax
 
-###backend 
--Node js   
--Express js
+### backend 
+- Node js   
+- Express js
  
- -MongoDB as database
+- MongoDB as database
   mongoose as schema for model application
