@@ -1,0 +1,27 @@
+{
+  "name": "projectwebhosting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ui-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aahirwar20/projectwebhosting.git"
+  },
+  "author": "ankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aahirwar20/projectwebhosting/issues"
+  },
+  "homepage": "https://github.com/aahirwar20/projectwebhosting#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.3",
+    "multer": "^1.4.4",
+    "net": "^1.0.2",
+    "xlsx": "^0.17.4"
+  }
+}

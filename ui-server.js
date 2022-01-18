@@ -8,7 +8,6 @@ var pack=require('./uipack');
 var mongoose= require('mongoose');
 var url =require('url');
 mongoose.connect('mongodb://localhost:27017/my_db');
-const port = process.env.port || 3000
 var formschema =mongoose.Schema({
     name: String,
     data: String
@@ -19,31 +18,35 @@ var form = mongoose.model("form",formschema);
 app.use(express.static('UI'));
 
 app.get('/',function(req,res){
+     var readerstream =fs.createReadStream('./UI/start.html');
+    readerstream.setEncoding('utf-8');
+readerstream.on('data',function(data){
+    res.send(data);
     
-    fs.readFile('./UI/start.html',function(err,data){
-        if(err) throw err;
-        else{
-        
-            res.send(data);
-            
 
-            
-        }
-    });
+});
+readerstream.on('end',function(){
+
+});
+readerstream.on('error',function(data){
+console.log('error in data sent');
+    
+});
 });
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(upload.array());
+
+
 app.get('/add',function(req,res){
     form.find({},function(err,data){
         if(err){throw err;}
         else{
             let s= pack(data);
+            
             res.send(s);}
          });
 });
-
-
 app.post('/form',function(req,res){
     
     qu= url.parse(req.url,true).query;
@@ -52,21 +55,12 @@ app.post('/form',function(req,res){
      data:qu.data
      
  });
- console.log(qu.data);
+ 
  formbody.save(function(err,form){
      if(err){throw err;}
  });
  
  res.end();
-});
-
-app.get('/add',function(req,res){
-    form.find({},function(err,data){
-        if(err){throw err;}
-        else{
-            let s= pack(data);
-            res.send(s);}
-         });
 });
 
 
@@ -125,7 +119,7 @@ app.get('/delete',function(req,res){
 
  app.get('/log-in',function(req,res){
     var ur =url.parse(req.url,true).query;
-    console.log(ur);
+    
     fs.readFile('./log-in/log-in.html',function(err,data){
         if(err) throw err;
         else{
@@ -165,4 +159,4 @@ res.end();
         }});
   });
         
-app.listen(3000);
+app.listen(8000);
