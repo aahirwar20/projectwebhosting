@@ -22,6 +22,7 @@ body{
     top: 20px;
     left: 50px;
     background-color: rgb(221, 250, 214);
+    margin-bottom: 10px;
 }
 .log-pass{
     position: absolute;
@@ -32,7 +33,41 @@ body{
     top: 55px;
     left: 50px;
     background-color: rgb(211, 247, 191);  
-
+    margin-bottom: 10px;
+}
+.signup-mbl{
+    position: absolute;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 55px;
+    left: 50px;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+#mail,#pin,#pass,#mbl{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 10px;
+    left: 20px;
+    align-items: center;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+lable{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 10px;
+    left: 0px;
+      
+    margin-bottom: 10px;
 }
 .log-submit{
     position: absolute;
@@ -61,9 +96,9 @@ body{
     position: absolute;
     top: 140px;
     left: 440px;
-  
-    height: 450px;
-    width: 300px;
+   padding: 10px;
+    height: 400px;
+    width: 400px;
     border-radius: 10px;
 }
 .sign-up-submit{
@@ -76,9 +111,17 @@ body{
     left: 120px;
     background-color: rgb(154, 225, 247);
 }
-#in{
+#fname{
     position: absolute;
-    bottom: 30px;
-    left: 80px;
-    color: red;
+width: 130px;
+top:10px;
+left:50px;
+background-color: rgb(211, 247, 191);
+}
+#lname{
+    position: absolute;
+    width: 130px;
+    top:10px;
+    right:50px;
+    background-color: rgb(211, 247, 191);
 }

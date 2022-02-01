@@ -67,27 +67,8 @@ z-index: 1;">add </i>
 <img src="/UI/bc_1.jpg" alt="it is img">
 </body>
 <footer class="last-feed" >
-    <button class="log-in" onclick="show_feed()">feedback</button>
+   <a href="/feed_check"><button class="log-in" >feedback</button></a> 
 
-    <form class="feedback"style="display: none;" method="get" action="/feedback">
-      <label for="feed"></label>
-      
-    <textarea type="input" id="feed" class="feed_input" name="feedback" placeholder="Write feedback"></textarea>
-    <button class="feed_submit" type="submit">submit</button>
-    
-</form>
-<script>
-    function show_feed(){
-      
-var a= document.querySelector('.feedback').style.display;
-if(a=='none'){
-  document.querySelector('.feedback').style.display='block';
-}
-else{
-  document.querySelector('.feedback').style.display='none';
-}
-}
-</script>
 </footer>
     
 </html>

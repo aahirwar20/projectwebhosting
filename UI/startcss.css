@@ -130,6 +130,19 @@ left: 15px;
      border-color: #eef0f0;
      cursor: pointer;
  }
+ .profile{
+     position: absolute;
+     right: 200px;
+     top:0px;
+     color: #f9f3fa;
+ }
+ img{
+     position: relative;
+     height: 400px;
+     width: 800px;
+     z-index: -1;
+     top: -100px;
+ }
  .data-border{
     position: relative;
      visibility: visible;
@@ -154,8 +167,53 @@ left: 15px;
     padding-left: 0px;
      background:linear-gradient(to right bottom, #9154f3 0%, #fdacfd 100%);
      border-radius: 10px;
-     
+     overflow: hidden;
  }
+ .feature::before{
+     content: "";
+     display: block;
+     position: relative;
+ height: 250px;
+ width: 30%;
+ color: #1b1b1b;
+ 
+ top: 0px;
+ left: -50%;
+ background: linear-gradient(to  bottom, #000000 0%, #949292 130%);
+ 
+}
+.feature:hover::before{
+    animation: l-bar 1s linear 0s forwards;
+}
+@keyframes l-bar {
+    to{left: 0px;}
+    
+}
+
+.ball{
+       position: absolute;
+      
+       background :radial-gradient(red,rgb(109, 31, 37));
+       bottom: -10px;
+       left: 20px;
+       z-index: 1;
+       width: 80px;
+       height: 80px;
+       border-radius: 50%;
+    }
+.ball{
+    animation: 
+    x  2s linear infinite alternate ,
+    y  2s infinite cubic-bezier(0,20,1,20) ;
+}
+
+@keyframes x {
+    to{left: calc(100% - 100px);}
+}
+@keyframes y {
+    to{bottom: -0px;}
+}
+
  .last-feed{
     visibility: visible;
     position: relative;
@@ -170,7 +228,7 @@ left: 15px;
  }
  .add{
     position: relative;
-    background-color: rgb(219, 238, 240);
+    background-color: rgb(48, 100, 105);
      width: 1020px;
      height: 66px;
      max-height: 110px;
@@ -306,4 +364,42 @@ left: 15px;
     left: 100px;
     top: 50px;
     
+}
+.log_in{
+    position: absolute;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: medium;
+    top: 0px;
+    
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px rgb(110, 110, 110),2px 1px 2px rgb(173, 172, 172);
+}
+.log_in:hover{
+    visibility: visible;
+}
+.feedback{
+    
+    position: relative;
+    
+    left: 20px;
+    top: 5px;
+}
+.feed_input{
+    position: relative;
+    height: 170px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgb(95, 94, 94);
+    
+}
+.feed_submit{
+   position: relative;
+   height: 25px;
+   width: 90px;
+   background-color: #9154f3;
+   border-radius: 5px;
+   font-size: medium;
 }

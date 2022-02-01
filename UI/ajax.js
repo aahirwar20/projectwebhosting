@@ -1,13 +1,5 @@
 
-var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     
-     document.getElementById('m1').innerHTML= this.responseText;
-    }
-  };
-  xhttp.open("GET", "/add?name=30", true);
-  xhttp.send();
+
 
   
  
@@ -33,10 +25,16 @@ function expand(id){
 function upl(){
       var nam= document.getElementById('fn').value;
       var dat= document.getElementById('fd').value;
+       
+       let params = (new URL(document.location)).searchParams;
+          let id = params.get("id");
+       
+       console.log(id);
       
+
    
       var t="/form?name="+nam+"&data="+dat;
-      console.log(t);
+      
       var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -96,6 +94,16 @@ function list(id){
     }
 
 
+function show_feed(){
+      
+  var a= document.querySelector('.feedback').style.display;
+  if(a=='none'){
+    document.querySelector('.feedback').style.display='block';
+  }
+  else{
+    document.querySelector('.feedback').style.display='none';
+  }
+  }
 
   function rupdate(id){
       var name=document.getElementById('r'+id+'n').innerHTML;

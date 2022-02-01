@@ -1,0 +1,25 @@
+<html>
+    <link rel="icon" type="image/png" href="icon.jpg" sizes="32x32" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="feedback.css">
+    <script src="angular.js"></script>
+</html>
+<body>
+<table ng-app="myfeed" ng-controller="myfeed_ctr">
+<tr><th>ID</th><th>feedback</th></tr>
+<tr ng-repeat="x in data"><td>{{x.s_no}}</td><td>{{x.feed}}</td></tr>
+</table>
+<script>
+var app= angular.module('myfeed',[]);
+    app.controller('myfeed_ctr',function($scope,$http){
+        var s='/add_feed';
+        console.log(s);
+        $http.get(s).then(function(res){
+           $scope.data=res.data.f;
+            console.log(res.data.f);
+        });
+    });</script>
+</body>
