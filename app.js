@@ -25,7 +25,7 @@ var formschema =mongoose.Schema({
 var form = mongoose.model("form",formschema);
 var sendschema =mongoose.Schema({
     from:{id:Number,name:String,mail:String},
-    to:{id:Number, name:String,mail:String},
+    to:{id:Number,mail:String},
     name: String,
     data: String,
     });
@@ -270,7 +270,6 @@ var formbody= new sign_up({
 
   app.get("/log-out",function(req,res){
   req.session.destroy(function(){
-      console.log('log out');
       res.redirect('/log-in');
   })
   });
@@ -364,17 +363,18 @@ app.get('/add_send',check_sign_in,function(req,res){
    
    sign_up.find({s_no:req.session.user.id},function(err,from_data){
        if(err){throw err;}
-       
-       sign_up.find({mail:qu.to_mail},function(er,to_data){
-        if(er){throw er;}
-       console.log(to_data[0].fname);
+      
+       sign_up.find({mail:qu.to_mail},function(err,to_data){
+        if(err){throw err;}
+        
+      
         var formsend =new send({
             from:{id:from_data[0].s_no,name:from_data[0].fname,mail:from_data[0].mail},
-            to:{id:to_data[0].s_no, name:to_data[0].fanme,mail:to_data[0].mail},
+            to:{id:to_data[0].s_no,mail:to_data[0].mail},
             name: qu.name,
             data: qu.data,});
-            console.log(formsend);
             formsend.save(function(et,send){
+                
                 if(et){throw et;}
                 res.send('succesfully add');
             });
@@ -383,13 +383,16 @@ app.get('/add_send',check_sign_in,function(req,res){
    });
 });
  app.get('/find_send',check_sign_in,function(req,res){
-     sign_up.find({id:req.session.user.id},function(err,sign){
-send.find({to:{id:req.session.user.id,mail:sign[0].mail}},function(err,data){
+     sign_up.find({s_no:req.session.user.id},function(err,sign){
+         var k={to:{id:req.session.user.id,mail:sign[0].mail}}
+         
+send.find(k,function(err,data){
+    
     var m={send:data};
+    
     res.send(m);
     
 });});
  });
-
-        
+      
 app.listen(8000);

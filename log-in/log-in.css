@@ -1,6 +1,7 @@
 body{
-    background-color: bisque;
+    background-color: rgb(231, 232, 233);
     text-align: center;
+    overflow: hidden;
 }
 .logbox{
     background-color: white;
@@ -50,11 +51,11 @@ body{
     left: -45px;
     box-shadow: 20px;
 }
-.sign-up-call{
-    position: relative;
-    color: rgb(248, 123, 123);
-    top: 130px;
-    left: 60px;
+#sign-up-call{
+    position: absolute;
+    color: rgb(14, 13, 13);
+    bottom: 100px;
+    left: 55%;
 }
 .signupbox{
     background-color: white;
@@ -81,4 +82,81 @@ body{
     bottom: 30px;
     left: 80px;
     color: red;
+}
+.box{
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    border-width: 0px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(248, 249, 250, 1);
+    box-shadow: 1px 1px 10px rgb(119, 119, 119);
+    margin-left: 50px;
+    margin-bottom: 50px;
+    animation: box_ant 1s linear backwards;
+}
+@keyframes box_ant {
+    10% {transform:rotate(-50deg);
+        left: -40%; }
+    100%{transform:rotate(0deg);
+        left: 0%;}
+    
+}
+.down-line{
+    position: absolute;
+    width: 80%;
+    height: 8px;
+    overflow: hidden;
+ 
+    border-radius: 4px;
+    left: 10%;
+    bottom: 10px;
+}
+.design-circle{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top:-65px;
+    left: -400px;
+    border-radius: 50%; 
+    border-width: 500px;
+    border-style: solid;
+border-top-color: #eb4d25;
+border-bottom-color: yellow;
+border-left-color: green;
+border-right-color:blue ;
+animation: circle_rotate 2s linear 0s infinite forwards ;
+}
+@keyframes circle_rotate{
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+#box_other{
+position: absolute;
+right: 20px;
+top: 40px;
+}
+.submenu{
+    position: absolute;
+    
+}
+.c-button1{
+    position: absolute;
+    height: 30px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgba(148, 32, 243, 0.8);
+    border-width: 1px;
+    color: #fafafa;
+    bottom: 40px;
+    left: 30%;
+}
+
+.c-button1:hover{
+    background-color: rgba(146, 40, 233, 0.5);
 }

@@ -3,7 +3,7 @@ app.controller('myCtrl',function($scope,$http,$q){
    
    $scope.uname='';
    $scope.udata='';
-   $scope.mail='';
+   
    $scope.ushow=false;
   
     
@@ -14,11 +14,12 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.show_send[id]=!$scope.show_send[id];
     }
     $scope.send=function(id){
-        var t=document.getElementById('add_mail').value;
-        var sn ='/add_send?to_mail='+t+'&name='+$scope.k[id].name+'&data='+$scope.k[id].data;
-        $scope.show_send[id]=false;
+       console.log($scope.mail[id]);
+        var sn ='/add_send?to_mail='+$scope.mail[id]+'&name='+$scope.k[id].name+'&data='+$scope.k[id].data;
+        
 
         $http.get(sn).then(function(response){
+            $scope.show_send[id]=false;
             console.log(response);
         });
     }
@@ -66,11 +67,13 @@ app.controller('myCtrl',function($scope,$http,$q){
        
         var l=$scope.k.length;
         var i;
+        $scope.mail=[];
         $scope.showme=[];
         $scope.show_send=[];
     for(i=0;i<l;i++){
         $scope.showme.push(false);
         $scope.show_send.push(false);
+        $scope.mail.push('');
     }
      
     });
