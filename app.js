@@ -4,7 +4,6 @@ var fs = require('fs');
 var bodyparser=require('body-parser');
 var multer =require('multer');
 var upload= multer();
-var pack=require('./uipack');
 var mongoose= require('mongoose');
 var url =require('url');
 var session = require('express-session');
@@ -12,6 +11,7 @@ var cookieParser = require('cookie-parser');
 var records=[];
 
 const { stringify } = require('querystring');
+const res = require('express/lib/response');
 mongoose.connect('mongodb://localhost:27017/my_db');
  
 var formschema =mongoose.Schema({
@@ -23,6 +23,14 @@ var formschema =mongoose.Schema({
 });
 
 var form = mongoose.model("form",formschema);
+var sendschema =mongoose.Schema({
+    from:{id:Number,name:String,mail:String},
+    to:{id:Number, name:String,mail:String},
+    name: String,
+    data: String,
+    });
+
+var send = mongoose.model("send",sendschema);
 var feedbackschema =mongoose.Schema({
     s_no:Number,
     feed: String
@@ -110,7 +118,27 @@ app.get('/add',check_sign_in,function(req,res){
     form.find({s_no:req.session.user.id},function(err,data){
         if(err){throw err;}
         else{
-            let s= pack(data);res.send(s);}});});
+            var note =[],i;
+            var struct={
+                id:Number,
+                name:String,
+                data:String
+            }
+            
+            for(i in data){
+                
+                struct={
+                    id:i,
+                    name:data[i].name,
+                    data:data[i].data
+                }
+                
+                note.push(struct);
+            }
+            var m={
+            note:note
+            };
+            res.send(m);}});});
 
 app.get('/addname',check_sign_in,function(req,res){
     var a={s_no:req.session.user.id};
@@ -119,24 +147,29 @@ app.get('/addname',check_sign_in,function(req,res){
         var t=JSON.stringify(k);
         res.write(t);res.end();})});
 
-app.post('/form',check_sign_in,function(req,res){
+app.get('/form',check_sign_in,function(req,res){
     qu= url.parse(req.url,true).query;
+    console.log(qu);
  var formbody= new form({s_no:req.session.user.id,name:qu.name,data:qu.data});
  formbody.save(function(err,form){if(err){throw err;}});
- res.end();});
+ res.redirect('/note');});
 
 
 app.get('/delete',check_sign_in,function(req,res){var i;  
      ur =url.parse(req.url,true).query;
+    
     var no= ur.index;
+    
     form.find({s_no:req.session.user.id},function(err,data){
          if(err){ throw err;}
         else{ var j;
-            for(j in data){if(j==no){var i=data[j].id; 
+            for(j in data){if(j==no){
+                
+                var i=data[j].id; 
                 form.findByIdAndRemove(i,function(err,dat){if(err){throw err;}else{ }});
                 res.send('');}}}});});
 
- app.get('/uptade',check_sign_in,function(req,res){var i;  
+ app.get('/update',check_sign_in,function(req,res){var i;  
              ur =url.parse(req.url,true).query;
             var no= ur.index;
             var nam =ur.name;
@@ -325,6 +358,38 @@ app.get("/add_feed",check_feed,function(req,res){
     res.end();       }); 
   
 });
+
+app.get('/add_send',check_sign_in,function(req,res){
+    var qu=url.parse(req.url,true).query;
+   
+   sign_up.find({s_no:req.session.user.id},function(err,from_data){
+       if(err){throw err;}
+       
+       sign_up.find({mail:qu.to_mail},function(er,to_data){
+        if(er){throw er;}
+       console.log(to_data[0].fname);
+        var formsend =new send({
+            from:{id:from_data[0].s_no,name:from_data[0].fname,mail:from_data[0].mail},
+            to:{id:to_data[0].s_no, name:to_data[0].fanme,mail:to_data[0].mail},
+            name: qu.name,
+            data: qu.data,});
+            console.log(formsend);
+            formsend.save(function(et,send){
+                if(et){throw et;}
+                res.send('succesfully add');
+            });
+       });
+
+   });
+});
+ app.get('/find_send',check_sign_in,function(req,res){
+     sign_up.find({id:req.session.user.id},function(err,sign){
+send.find({to:{id:req.session.user.id,mail:sign[0].mail}},function(err,data){
+    var m={send:data};
+    res.send(m);
+    
+});});
+ });
 
         
 app.listen(8000);

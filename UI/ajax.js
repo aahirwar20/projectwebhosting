@@ -104,7 +104,18 @@ function show_feed(){
     document.querySelector('.feedback').style.display='none';
   }
   }
-
+  function show2( id){
+    console.log(id);
+    var a= document.querySelector('.sub_menu').style.display;
+  if(a=='none'){
+    document.querySelector('.sub_menu').style.display='block';
+  }
+  else{
+    document.querySelector('.sub_menu').style.display='none';
+  }
+       
+  }
+  
   function rupdate(id){
       var name=document.getElementById('r'+id+'n').innerHTML;
       var data= document.getElementById('r'+id+'d').innerHTML;

@@ -141,7 +141,7 @@ left: 15px;
      height: 400px;
      width: 800px;
      z-index: -1;
-     top: -100px;
+     top: 0px;
  }
  .data-border{
     position: relative;
@@ -168,27 +168,15 @@ left: 15px;
      background:linear-gradient(to right bottom, #9154f3 0%, #fdacfd 100%);
      border-radius: 10px;
      overflow: hidden;
+     animation: slide-down 1s linear 0s forwards;
  }
- .feature::before{
-     content: "";
-     display: block;
-     position: relative;
- height: 250px;
- width: 30%;
- color: #1b1b1b;
- 
- top: 0px;
- left: -50%;
- background: linear-gradient(to  bottom, #000000 0%, #949292 130%);
- 
-}
-.feature:hover::before{
-    animation: l-bar 1s linear 0s forwards;
-}
-@keyframes l-bar {
-    to{left: 0px;}
-    
-}
+ @keyframes slide-down {
+     from{height: 0%;}
+     to{height: 40%;}
+     
+ }
+ .material-icons
+
 
 .ball{
        position: absolute;
@@ -241,34 +229,37 @@ left: 15px;
      
  }
  .add-name{
-     position: absolute;
-     width :225px;
+     position: relative;
+     width :200px;
      padding-left: 10px;
-     top: 10px;
-     left: 20px;
-     height: 50px;
-     border-radius: 10px 0px 0px 10px;
+     top: 5px;
+     left: 0px;
+     height: 40px;
+     border-radius: 20px;
      border-width: 1px;
      font-size: 15px;
  }
  .add-data{
      
-    position: absolute;
-    width :700px;
+    position: relative;
+    width :250px;
     padding-left: 10px;
-    top: 10px;
-    left: 250px;
-    height: 50px; 
+    top: 15px;
+    left: 5px;
+    border-radius: 5px;
+    height: 200px; 
     font-size: 15px;
     overflow: hidden;
  }
  .add-send{
     position: absolute;
-    left: 950px;
-    height: 50px; 
-    top :10px;
+    
+    height: 40px; 
+    top :5px;
+    right: 5px;
     border-radius: 0px 10px 10px 0px;
     border-width: 1px;
+    background-color: #9154f3;
     
  }
  .b1{
@@ -402,4 +393,92 @@ left: 15px;
    background-color: #9154f3;
    border-radius: 5px;
    font-size: medium;
+}
+
+.data{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: inline-block;
+}
+.box{
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    border-width: 0px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(248, 249, 250, 0.3);
+    box-shadow: 1px 1px 10px rgb(119, 119, 119);
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+.down-line{
+    position: absolute;
+    width: 80%;
+    height: 8px;
+    overflow: hidden;
+ 
+    border-radius: 4px;
+    left: 10%;
+    bottom: 10px;
+}
+.design-circle{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top:-65px;
+    left: -400px;
+    border-radius: 50%; 
+    border-width: 500px;
+    border-style: solid;
+border-top-color: #eb4d25;
+border-bottom-color: yellow;
+border-left-color: green;
+border-right-color:blue ;
+animation: circle_rotate 2s linear 0s infinite forwards ;
+}
+@keyframes circle_rotate{
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+#box_other{
+position: absolute;
+right: 20px;
+top: 40px;
+}
+.submenu{
+    position: absolute;
+    
+}
+.c-button1{
+    position: relative;
+    height: 30px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgba(146, 40, 233, 0.8);
+    border-width: 1px;
+    color: #fafafa;
+}
+#add-one{
+    position: absolute;
+   left: 5px;
+   top: 10px;
+}
+#ubox::before{
+    content:'';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+   background-color: #fc3b0b;
+   left: 7px;
+   top:9px
+
+
 }

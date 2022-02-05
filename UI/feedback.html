@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="feedback.css">
     <script src="angular.js"></script>
 </html>
-<body>
-<table ng-app="myfeed" ng-controller="myfeed_ctr">
-<tr><th>ID</th><th>feedback</th></tr>
-<tr ng-repeat="x in data"><td>{{x.s_no}}</td><td>{{x.feed}}</td></tr>
-</table>
+<body >
+    <div class="data" ng-app="myfeed" ng-controller="myfeed_ctr">
+    <div class='box' ng-repeat="x in data" >
+        <h2>{{x.s_no}}</h2>  
+         <p>{{x.feed}}</p> 
+      <div class="down-line">
+        <p class="design-circle"></p> </div>
+      </div></div>
+      
 <script>
 var app= angular.module('myfeed',[]);
     app.controller('myfeed_ctr',function($scope,$http){
         var s='/add_feed';
-        console.log(s);
+        
         $http.get(s).then(function(res){
            $scope.data=res.data.f;
             console.log(res.data.f);

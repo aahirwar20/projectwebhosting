@@ -2,6 +2,10 @@ body{
     background-color: bisque;
     text-align: center;
 }
+input:invalid{
+    border-color: red;
+    background-color: red;
+}
 .logbox{
     background-color: white;
     position: absolute;
