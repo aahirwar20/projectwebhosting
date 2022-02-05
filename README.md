@@ -10,6 +10,7 @@ Ankit AHIRWAR
 - HTML
 - CSS
 - JavaScript
+- Angular.js
 - Jquary
 - Ajax
 
@@ -19,3 +20,9 @@ Ankit AHIRWAR
  
 - MongoDB as database
   mongoose as schema for model application
+  
+  ### Tutorial for localhost
+ install Node js for backend ,MongoDB  for database  
+ command -
+ git clone https://github.com/aahirwar20/projectwebhosting.git 
+  npm install 
