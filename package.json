@@ -1,7 +1,7 @@
 {
-  "name": "projectwebhosting",
+  "name": "notesocialocean",
   "version": "1.0.0",
-  "description": "",
+  "description": "noted website",
   "main": "ui-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/aahirwar20/projectwebhosting.git"
   },
   "author": "ankit",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aahirwar20/projectwebhosting/issues"
   },
@@ -25,5 +25,9 @@
     "multer": "^1.4.4",
     "net": "^1.0.2",
     "xlsx": "^0.17.4"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "2"
+  ]
 }
