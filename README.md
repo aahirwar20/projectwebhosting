@@ -26,3 +26,7 @@ Ankit AHIRWAR
  command -
  git clone https://github.com/aahirwar20/projectwebhosting.git 
   npm install 
+<<<<<<< HEAD
+
+=======
+>>>>>>> fe477a186dcf29c1baa185b947c36cb1a302f31f
